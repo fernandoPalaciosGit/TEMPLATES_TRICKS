@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+<meta charset= "utf-8">
+<title>New tags html5</title>
+</head>
+
+<body>
+<h1>Nuevas caracteristicas de formularios html5</h1>
+
+<!--"name": nombre del control, por el que reconocera el script del servidor (action)-->
+<form action="http://www.google.es/formulario.php" id="form-order" method="post">
+
+<p>
+<label for="texto">Nombre obligatorio</label><!-- etiqueta para el elemento imput --> <!-- <label for="control"/>==>CONTROL ASOCIADO==> <input id="control"/> -->
+	<input name="nombre-servidor" type="text" id="texto"
+	placeholder="Fernando Palacios" autofocus="autofocus" autocomplete="on" required="required" size="50" />
+</p>
+
+<!-- PLACEHOLDER solo ayudara al usuario a intuir el patron del formulario; ponemos un ejemplo de como se deberia rellenar -->
+<!-- REQUIDED obligan al usuario a rellenar el formulario antes de que se envie-->
+<!-- los atributos de <input type="email" type="url" pattern="..."> obligan a VALIDAR desde la maquina del cliente los datos introducidos en el input del formulario; PERO NO SON NECESARIOS-->
+
+<!-- Contraseña: texto obligatorio y validado desde el cliente-->
+<p>
+<label for="pass">Contraseña obligatoria</label>
+	<input name="nombre-servidor" type="password" id="pass"
+	placeholder="4316wally" pattern="[0-9]{4}[a-zA-z]{5}" required="required"/>(si hay que introducir un <i>pattern</i> mejor lo especificamos aqui: contraseña de 4 numeros y 3 letras)
+</p>
+
+ <!-- como No tenemos puesto ni 'pattern' ni 'required' el formulario se envia y se valida de todas formas -->
+<p>
+<label for="telf">Telefono</label>
+	<input name="scrip-servidor" type="tel" id="telf"
+	placeholder="+607800546"/>
+</p>
+
+<!-- la validacion nativa significa que el control añadido en input se comprueba si es correcto (el email o la url) ANTES DE ENVIARLO; -->
+<!-- pero NO ES NECESARIO QUE SEAN RELLENADOS, para ello debes ponerles un atributo de REQUIRED-->
+<p>
+<label for="mail">Correo electronico</label>
+	<input name="nombre-servidor" type="email" id="mail"
+	placeholder="name@dominio.com" required="required"/><!-- type="email": validacion nativa desde la parte del cliente -->
+</p>
+
+<p>
+<label for="web">Direccion Web</label>
+	<input name="nombre-servidor" type="url" id="web"
+	placeholder="http://www.tuWeb.com" ><!-- type="url": validacion nativa desde la parte del cliente -->
+</p>
+
+<p>
+<label for="num">Nº de Temas</label>
+	<input name="nombre-servidor" type="number" id="num"
+	min="0" max="8" step="0.5">
+</p>
+
+<p>
+<label for="fecha">Fecha de envio</label>
+	<input name="nombre-servidor" type="date" id="fecha"
+	min="2012-01-15" placeholder="Año-mes-dia"/> (minimo el 15 de Enero del 2012)<!-- AÑO-MES-DIA -->
+</p>
+
+<p>
+<label for="fecha"></label>
+	<input name="nombre-serv" type="month" id="fecha"
+	min="1950-01" placeholder="Año-Mes de venta"/> (minimo Enero de 1950) <!-- AÑO-MES -->
+</p>
+
+
+<!-- el atributo 'color' es el valor por defecto del color establecido en la paleta -->
+<p>
+<label for="paleta">Color del item</label>
+	<input name="nombre-servidor" type="color" id="paleta"
+	value="#H1A33F"/><!-- paleta de colores -->
+</p>
+
+<p>
+<label for="busqueda">Buscar</label>
+	<input name="nombre-servidor" type="search" id="busqueda"/>
+</p>
+
+<p>
+<label for="puntos">Rango de valores</label>
+	<input name="nombre-servidor" type="range" id="puntos"
+	min="1" max="10"/> (entre [1,10])
+</p>
+<!--entrada oculta al navegador, dice al script del servidor donde debe enviar los resultados-->
+<p>
+	<input type="hidden" name="mailto" value="ferandopalacioslandi@gmail.ccom" /1>
+</p>
+
+<!-- todos los radio los agrupamos en 'fieldset' + 'legend' -->
+<!-- solo UN valor de 'radio' se puede elegir-->
+<!--  'checked' nos indica que elemento debe estar preseleccionado cuando la pagina se carga-->
+<!-- 'legend' sustituye a label ==> descripcion del conjunto de inputs -->
+<fieldset>
+	<legend>Selecciona una prioridad</legend>
+		<p><input name="nombre-servidor" type="radio" id="eleccion" value="Baja"/><label for="eleccion">Baja</label></p>
+		<p><input name="nombre-servidor" type="radio" id="eleccion" value="Media" checked="checked"/><label for="eleccion">Media</label></p>
+		<p><input name="nombre-servidor" type="radio" id="eleccion" value="Alta"/><label for="eleccion">Alta</label></p>
+</fieldset>
+
+<!-- los input de tipo checkbox actuan como conmutadores -->
+<fieldset>
+	<legend>Seleccionar el tipo de envio</legend>
+		<p><input name="nombre-serv" type="checkbox" id="eleccion" value="urgente" checked="checked"><label for="election">Urgente</label></p>
+		<p><input name="nombre-serv" type="checkbox" id="eleccion" value="acuse"><label for="election">Con acuse de recibo</label></p>
+		<p><input name="nombre-serv" type="checkbox" id="eleccion" value="deliverytype"><label for="election">Con reenbolso</label></p>
+</fieldset>
+
+<fieldset>
+	<legend><strong>Artistas</strong> por categorias: <em>!!!puedes elegir varias opciones!!!</em></legend>
+	<!--"size": numero de filas v-->
+	<select id="cat1" name="nombre-serv" size="4" multiple="multiple">
+		<optgroup label="techno">
+			<option>Jeff Mills</option>
+			<option>Carl Cox</option>
+			<option>Richie Hawtin</option>
+		</optgroup>
+		<optgroup label="house">
+			<option>Steve Angelo</option>
+			<option >Sebastien Ingrosso</option>
+			<option>Piriuppa</option>
+		</optgroup>
+	</select>
+
+	<select id="cat2" name="nombre-serv" size="4" multiple="multiple">
+		<optgroup label="minimal">
+			<option>Jeff Mills</option>
+			<option>Carl Cox</option>
+			<option>Richie Hawtin</option>
+		</optgroup>
+		<optgroup label="drumbass">
+			<option>Steve Angelo</option>
+			<option >Sebastien Ingrosso</option>
+			<option>Piriuppa</option>
+		</optgroup>
+	</select>
+</fieldset>
+
+<fieldset>
+	<datalist id="fruits">
+	  <select name="fruits">
+	    <option value="mora">Blackberry</option>
+	    <option value="grosella negra">Blackcurrant</option>
+	    <option value="arandano">Blueberry</option>
+	  </select>
+	  If other, please specify: <!-- navegadores no compatibles cmon datalist -->
+	</datalist>
+	<label for="frutas_bosque">Your favorite fruit: </label>
+	<input type="text" name="fruit" id="frutas_bosque" list="fruits">
+</fieldset>
+
+<!-- 'value' muestra el nombre del texto en el boton != de 'value' en type="color"-->
+<input type="submit" value="Enviar Texto"/>
+
+</form>
+</body>
+
+</html>

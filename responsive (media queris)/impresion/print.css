@@ -1,0 +1,52 @@
+@CHARSET "ISO-8859-1";
+/*CONSEJOS DE DISEÑO PARA LA IMPRESION
+- cambiar colores a negro sobre blanco
+- fuentes serif son mas faciles de leer
+- cambiar el tamaño d efuente a >= 12px
+- subrayar todos los enlaces
+- dejar solo las imagenes importantes
+- mantener solo el logotipo d e la marcaq en el encabewzado de la pagina.
+- retirar la navegacion
+- eliminaar la publicidad
+- retirar elk javascript, imagenes animadas, flash
+- incluir una url de la pagina en el pie de la pagina de impresion
+- incluir una notificacion de derechos de autor en el pie de pagina
+*/
+
+
+/*NEGRO SOBRE BLANCO, TAMAÑO Y LETRAS SERIF*/
+section#wrapper{
+	display:inherit !important ;
+	margin-top: 10px;
+}
+
+.display-print{
+	display:none;
+}
+.visible{
+	display:inherit !important ; 
+	visibility: visible;
+}
+body{
+	color: black;
+	background-color: white;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 12px;
+}
+h2{
+	visibility: hidden;
+}
+h2:AFTER{	
+	visibility:visible;
+content: "ARTICULO";	
+}
+footer{
+	margin-top: 800px;
+	
+}
+
+/*SUBRAYAR ENLACES*/
+a{
+	text-decoration: underline;
+	color: red;
+}

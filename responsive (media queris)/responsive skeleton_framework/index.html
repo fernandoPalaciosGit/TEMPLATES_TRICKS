@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>nuestra primera web responsive</title>
+<link rel="stylesheet" href="estilo.css">
+<link rel="stylesheet" href="../librerias/framework css - Skeleton/stylesheets/base.css">
+<link rel="stylesheet" href="../librerias/framework css - Skeleton/stylesheets/skeleton.css">
+<link rel="stylesheet" href="../librerias/framework css - Skeleton/stylesheets/layout.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+
+ <div class="container">
+<header id="header" class="sixteen columns">
+	<h1>Web responsive design</h1>
+	<p>esta es mi primera web responsiva a diferentes navegadores en
+		funcion de la pabntalla de renderizacion de contenido web</p>
+	<nav id="navegacion">
+		MENU DE NAVEGACION
+	</nav>
+</header>
+
+<section id="contenido">
+	<article id="art1" class="two-thirds column"><!-- COLUMNA IZQUIERDA -->
+			<h1>etiqueta de video - TEORIA</h1>
+	<ol>
+		<li>E importante usar dos formatos. mp4, cgo</li>
+		<li>se puede manipular dfesde el DOM</li>
+		<li>llevan dengtro de su contebnedor un copdec de audio y un
+			codec de video</li>
+		<li>codec de video: MPEG4 La Group(.avi, .mkv, .m4v, .mp4) /
+			Theora(.ogg) / VP8(lo ofrecio google en codigo abierto; )</li>
+		<li>para que nuestro video se pueda renderizar en diferentes
+			navegadores, hay que usar varios codecs</li>
+		<li>codec de audio: MP3 o MPEG3 / AAC (itunes) / Vorbis(Ogg)</li>
+	</ol>
+	
+		<h2>por regla general</h2>
+	<dl>
+		<dt>contenedor de video WEBM</dt>
+		<dd>VP8 + Vorbis</dd>
+		<dt>contenedor de video MP4</dt>
+		<dd>H.264 + ACC</dd>
+		<dt>compatibilidad con todos los navegadores</dt>
+		<dd>FLASH</dd>
+	</dl>
+	</article>
+	
+	<article id="art2" class="one-third column"><!-- COLUMNA DERECHA -->
+		<h1>etiqueta de video - EJEMPLOS</h1>
+				<!-- VIDEO -->
+	<video width="250" height="240" controls="controls">
+			<!-- codecs -->
+		<source src="../videos/prueba.mp4" type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'"></source>
+		<source src="../videos/prueba.webm" type="video/webm; codecs='vp8, vorbis'"></source>
+	</video>
+		
+		<!-- AUDIO -->
+	<audio controls="controls">
+			<!-- codecs -->
+		<source src="../audios/prueba.mp3" type="audio/mp3"></source>
+		<source src="../audios/prueba.ogg" type="audio/ogg"></source>
+	</audio>
+
+	<p>cada navegador manipula e interpreta el tag de video/audio de
+		manera diferente; los estandares no se aplican a todos los
+		anavegadores por igual</p>
+	<p>Se suelen utilizar players, que añaden capas de video, como
+		skins platers y posibilidades de manipulacion de video/audio</p>
+	</article>
+</section>
+
+<section id="columnas">
+	<article class="one-third column">Esto es una columna 1</article>
+	<article class="one-third column">Esto es una columna 2</article>
+	<article class="one-third column">Esto es una columna 3</article>
+</section>
+
+<footer class="sixteen columns">
+	PIE DE PAGINA
+</footer>
+</div>
+</body>
+</html>

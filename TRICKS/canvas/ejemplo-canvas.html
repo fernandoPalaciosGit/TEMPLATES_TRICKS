@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>diseño de lienzo</title>
+<style type="text/css">
+body{
+margin: 0px auto;
+padding: 0px auto;
+}
+.canvas{
+	border: solid 5px black;
+}
+article{
+	margin-top: 50px;
+}
+article>canvas:nth-child(odd){
+	margin-left: 20px;
+}
+img{
+	display:none;
+}
+</style>
+</head>
+
+<body>
+	<h1>el lienzo == &lt;canvas&gt;</h1>
+	
+	<article>
+		<canvas id="canvasRect" class="canvas">
+			Tu navegador no soporta canvas
+		</canvas>
+		<script type="text/javascript" src="javascript/rectangulos.js"></script>
+		
+		<canvas id="canvasCirc" class="canvas">
+			Tu navegador no soporta canvas
+		</canvas>
+		<script type="text/javascript" src="javascript/circulos.js"></script>
+	</article>
+
+	<article>
+		<canvas id="canvasFig" class="canvas">
+			tu navegador no soporta canvas
+		</canvas>
+		<script type="text/javascript" src="javascript/figuras.js"></script>
+
+		<canvas id="canvasImg" class="canvas">
+			tu navegador no soporta canvas
+		</canvas>
+		<img src="imagenes/dj.jpg" alt="cascos dj" id="imgDJ" width="225" height="225"/>
+		<script type="text/javascript" src="javascript/imagen.js"></script>
+	</article>
+
+	<article>
+		<canvas id="canvasSmile1" class="canvas">tu navegador no soporta canvas</canvas>
+		<script type="text/javascript" src="javascript/sonrisa.js"></script>
+		
+		<canvas id="canvasSmile2" class="canvas">tu navegador no soporta canvas</canvas>
+		<script type="text/javascript" src="javascript/sonrisa.js"></script>
+	</article>
+
+	<article>
+		<h2>intervalos de tiempo</h2>
+		<p>funcion que se ejecuta como un bucle, una y otra vez, pasado un intervalo de tiempo</p>
+		<p>CONTADOR: <span id="intervalo"></span></p>
+		<script type="text/javascript" src="javascript/intervalo-tiempo.js"></script>
+	</article>
+
+	<article>
+		<h2>animacion basica</h2>
+		<canvas id="canvasAnimacion" class="canvas">tu navegador no soporta canvas</canvas>
+		<input type="button" id="iniciarAnimacion" value="Iniciar" />
+		<script type="text/javascript" src="javascript/animacion.js"></script>
+	</article>
+
+	
+</body>
+</html>

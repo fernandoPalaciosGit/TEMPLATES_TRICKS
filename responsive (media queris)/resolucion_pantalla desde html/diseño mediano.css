@@ -1,0 +1,14 @@
+@CHARSET "ISO-8859-1";
+/* diseño basado en 2 columnas (>=981 px)*/
+/*este diseño se activara con la instruccion: media="" */
+
+.display-medium{
+	display: inherit !important;
+}
+
+/*solo cambiamos el tipo de letra cuando se .pasa a una resolucion de pantalla [450-8..]*/
+
+body{
+	font-family: fantasy;
+	font-style: italic;
+}	

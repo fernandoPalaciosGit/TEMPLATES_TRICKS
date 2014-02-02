@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MICROFORMATOS</title>
+</head>
+<body>
+
+
+<section>
+<h1>tipos de microformatos</h1>
+
+<!-- TYPE -->
+<article>
+	<h1>el type del microformato</h1>
+		<p>puede venir adosado a cualquier bloque de microformato, como
+			si estuvieramos especificando la relacion</p>
+	<div class="vcard">
+		<p>ficha 
+			<span class="type">empresarial</span>
+			<span class="fn">
+				<span class="given-name">Fernando</span>  
+				<span class="family-name">Palacios Landi</span>
+			</span>
+			titulo de <span class="title">SEO</span>, para la empresa
+			<mark class="org">oracle</mark>, como 
+			<span class="role">Chief Executive Officer</span>
+		</p>
+		
+		<p>ficha de 
+			<span class="type">estudiante</span>: 
+			<span class="fn">
+				<span class="given-name">Fernando</span>  
+				<span class="family-name">Palacios Landi</span>
+			</span>
+			estudiante de  <span class="title">DAW</span>, en el instituto
+			<mark class="org">francesc Borja Moll</mark>, como 
+			<span class="role">desasrrollador web</span>
+		</p>
+
+		
+		<p class="adr">
+		<span class="type">direccion postal</span>
+		mateo fuiol 68
+		son pereto
+		la vileta
+		palma de mallorca
+		07013
+		ES
+		</p>
+		
+		<p class="adr"> 
+		<span class="type">direccion de trabajo</span>
+		caracas
+		es rafal
+		palma de mallorca
+		01254
+		ES
+		</p>
+		
+	</div>
+
+
+</article>
+
+
+
+
+
+<!-- GEOLOCALIZACION -->
+<article>
+	<h1>microformatos de geolocalizacion</h1>
+	<h2>formateo con parrafos</h2>
+	<p>
+		<span class="geo" style="display: none"> 
+			Lat: <span class="latitude">207.999</span>, 
+			Long: <span class="longitude">548.999</span>
+		</span>
+	</p>
+	
+	<h2>formateo con listas de definicion</h2>
+	<dl class="geo">
+	  <dt> Lat:</dt>  <dd class="latitude">  207.999</dd>
+	  <dt> Long: </dt> <dd class="longitude"> 548.999</dd>
+	</dl>
+	
+	<h2>señalando el contenido de un atributo</h2>
+	<p>Hotel 5 estrellas<span class="geo" title="207.999;548.999">Roc Illetas Playa, 
+	Paseo illetas 28, Palma de mallorca, España</span></p>
+</article>
+
+
+
+<!-- DIRECCIONES -->
+<article>
+	<h1>microformatos de direcciones</h1>
+	<p class="adr">
+		<span class="street-address">mateo fiol 68</span>, barrio de 
+		<span class="extended-address">son pereto</span>, 
+		<span class="locality">la vileta</span>, 
+		<span class="region">palma de mallorca</span>
+		<span class="postal-code">07013</span>, 
+		<abbr class="country-name" title="ESPAÑA">ES</abbr>
+	</p>
+</article>
+
+
+
+<!-- PERSONALES -->
+<article>
+	<h1>microfirmatos de personas</h1>
+	
+	<h2>formateo solo del nombre</h2>
+		<p class="vcard">
+			<span class="n">
+				<span class="honorific-prefixes">Mr.</span>
+				<span class="given-name">Mario</span> 
+				<span class="additional-names">Alejandro</span> 
+				<span class="family-name">Palacios Landi</span>
+			</span>
+		</p>
+	
+	<h2>formateo con nombre parcial</h2>
+		<p class="vcard">
+			<span class=" fn">
+				<span class="honorific-suffixes">Lord</span>, 
+				<span class="nickname">marius</span>
+			</span>			
+		</p>
+		<p class="vcard">
+			<span class=" fn">Mario Palacios</span>			
+		</p>	
+			
+	
+	<h2>formateo con nombre completo</h2>
+		<p class="vcard">
+			<span class="fn n">
+				<span class="honorific-prefixes">Mr.</span>
+				<span class="given-name">Mario</span> 
+				<span class="additional-names">Alejandro</span> 
+				<span class="family-name">Palacios Landi</span>
+				<span class="honorific-suffixes">Lord</span>, 
+			</span> 
+			<span class="nickname">marius</span>
+		</p>
+</article>
+
+
+
+<!-- URL -->
+<article>
+	<h1>miccroformatos de direcciones</h1>
+	<p class="vcard">
+		<a class="fn url" href="mailto:http://www.mario@gmail.com">Mario Palacios</a>
+	</p>
+</article>
+
+<!-- NACIMIENTO -->
+<article>
+	<h1>microformato año de nacimiento</h1>
+	<p class="vcard"><!-- time es un elemento inline -->
+		<span class="fn">Fernando Palacios</span>, nacido el: 
+		<time datetime="1985-12-11" class="bday">11 de diciembre del 1985</time>
+	</p>
+</article>
+
+ <!-- NOMBRE FOTO NACIMMENTO ORGANIZACIONES-->
+ <article>
+  	<h1>ficha personal</h1>
+ 	<div id="ficha">
+		<img alt="foto carnet fernando" src="#" width="150" height="200" class="photo"/>
+		<p class="vcard">
+			<span class="fn n linea">
+				<span class="honorific-prefixes">Mr.</span>
+				<span class="given-name">Fernando</span> 
+				<span class="family-name">Palacios Landi</span>
+			</span>
+			<span class="n linea">
+				<span class="n honorific-suffixes">Lord</span>
+				<span class="nickname">nando</span>
+			</span>
+			<span class="linea">
+				titulo de <span class="title">SEO</span>, para la empresa
+				<mark class="org">oracle</mark>, como 
+				<span class="role">Chief Executive Officer</span>
+			</span>
+			<a rel="url author" class="url linea" href="mailto:http://wwww.nando@gmeil.com">contacto</a>
+			<time datetime="1985-12-11" class="bday linea">11 de diciembre de 1985</time>		
+		<p> 	
+ 	</div>
+ </article>
+ 
+ 
+ 
+ <!-- EVENTOS -->
+ <article class="vevent">
+	<h3 class="summary">Web Directions North</h3>
+	<p class="description">A Web design and development 
+		<a href="#" class="url">conference</a> in Vancouver.</p>
+	<p>
+		From <time datetime="2007/02/06" class="dtstart">Feb. 6th 2007</time> 
+		to <time datetime="2007/02/09" class="dtend">Feb. 8th 2007</time>
+	</p>
+	<p class="location geo" title="207.999;548.999">Renaissance Vancouver Hotel Harbourside</p>
+</article>
+
+<table>
+	<tr class="vevent" >
+		<th>
+			<time class="dtstart" datetime="2006/09/28T10:15">10.15am</time>
+			<time class="dtend" datetime="2006/09/28T10:45">10.45am</time>
+		</th>
+		<th colspan="2"><span class="summary">Morning tea</span></th>
+	</tr>
+</table>
+
+
+
+<!-- EJEMPLOS EVENTOS -->
+<article>
+	<div class="vevent">
+		<h3>
+			<a href="#" class="summary url">mejorando la web</a>
+		</h3>
+		<p class="description">Los SEO de la agrupacion 'emprendedores
+			de la web 3.0' nos deleitaran con los ultimmos avances en
+			tecnologia de posicionamiento de contenido web y alimentaran
+			nuestra necesidad por favorecer una web accesible a los motores de
+			busqueda y triquiñuelas de las arañas de google para encontrar todo
+			lo relacionado con nuestro contenido
+		</p>
+		<p class="vcard location">
+			Lugar de encuentro: <span class="fn org">Aula Magna de conferencias de la UIB</span>
+			<span class="adr">
+				<span class="locality">Palma de mallorca</span>, 
+				<span class="country-name">España</span>
+			</span>
+		</p>
+		<p>
+			Cuando: <time datetime="2013/06/28">28 junio 2013</time> de  
+			<time class="dtstart" datetime="2013/06/28T10:15">10.15am</time> a 
+			<time class="dtend" datetime="2013/06/28T22:45">10.45pm</time>			
+		</p>
+		
+		
+	</div>
+
+</article>
+</section>
+
+</body>
+</html>
+
+
+
+
+

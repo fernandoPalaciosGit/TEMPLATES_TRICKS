@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prueba html </title>
+</head>
+<body>
+	<main id="form_web">
+		<header>
+			<h1>formulario Web</h1>
+			<h2>standarthtml5.01 para input y atributos</h2>
+		</header>
+		<article id="main_form">
+			<header>
+				<h2>new input types forms in html5</h2>
+			</header>
+			<form action="pruebas.php" method="POST" name="foo">
+				<p>el input de search es aquel se utiliza para buscar informacion dentro de nuestros directorios del server</p>
+				<p><label for="search">SEARCH</label><input type="search" name="search"/></p>
+
+				<p>se valida si lleva @' y NO lleva espacios en blanco</p>
+				<p><label for="email">EMAIL</label><input type="email" name="email" required></p>
+
+				<p>requiere del protocolo, el tipo de servidor y el dominio</p>
+				<p><label for="url">URL</label><input type="url" name="url" required></p>
+
+				<p>telefono</p>
+				<p><label for="tel">TELEFONO</label><input type="tel" name="tel"/></p>
+
+				<p>casilla numerica, poddemos sustituir patrones con los atributos, min, max, step</p>
+				<p><label for="number">NUMBER</label><input type="number" name="number" min="10" max="100" step="5"></p>
+
+				<p>rango [0, 100] </p>
+				<p><label for="range">RANGE</label><input type="range" value="50" name="range"></p>
+
+				<p>fechas, podemos usar un rango de fechas [YYYY-MM-DD]<br/>
+				los estilos de las fechas no se pueden manipular, y los valores tienen que definirse tal cual el standart</p>
+				<p><label for="date">DATE</label><input type="date"
+				name="date" min="1985-12-11" max="2013-09-27"/></p>
+
+				<p>meses, no tiene rangos, formato: value="1956-02"</p>
+				<p><label for="month">MES</label><input type="month" id="month"
+					name="month" value="1956-02"></p>
+
+				<p>semanas, no tiene rangos, formato: value="1956-W02", es la semana del año</p>
+				<p><label for="week">SEMANA</label><input type="week" id="week"
+					name="week" value="1956-W02"></p>
+
+				<p>horas, formato 24H: value="23:59"</p>
+				<p><label for="time"></label><input type="time" id="time" name="time" value="23:59"/></p>
+
+				<p>evitar la validacion nativa de los formularios: attr:'formnovalidate'</p>
+				<p>submit NO necesita 'name'</p>
+				<p><input type="submit" value="server"></p><!-- formnovalidate -->
+			</form>
+		</article>
+		<article id="main_attr">
+			<header>
+				<h2>new form atributes in hyml5</h2>
+			</header>
+			<ul>
+				<li>placeholder</li>
+				<li>autofocus</li>
+				<li>autocomplete</li>
+				<li>required</li>
+				<li>pattern</li>
+				<li>list</li>
+				<li>multiple</li>
+				<li>novalidate</li>
+				<li>formnovalidate</li>
+				<li>form</li>
+				<li>formaction</li>
+				<li>formenctype</li>
+				<li>formmethod</li>
+				<li>formtarget</li>
+			</ul>
+		</article>
+	</main>
+	<section id="form_attr">
+		<article id="attr_placeholder">
+			<header>
+				<h2><code>placeholder</code></h2>
+			</header>
+			<p>es una <strong>descripcion corta</strong> del valor que debe tomar el input</p>
+			<p><code>title</code>: atributo que extiende el sgnificado de <code>placeholder</code></p>
+			<p>el texto de e ste atributo desaparece una vez el foco toma el contro e el input</p>
+			<footer>
+				<p>los navegadores que no lo soportan,  ignoran su contenido</p>
+				<p>No se puede dar estil a l texto del placeholder</p>
+			</footer>
+		</article>
+
+		<article id="attr_autofocus">
+			<header>
+				<h2><code>autofocus</code></h2>
+			</header>
+			<p>cuando la pagina web se carga en el navegador, el input que lleve el atributo <code>autofocus</code>, toma el foco de la interaccion con el usuario</p>
+			<footer>
+				<p>los navegadores que no lo soportan,  ignoran su contenido</p>
+			</footer>
+		</article>
+
+		<article id="attr_autocomplete">
+			<header>
+				<h2><code>autocomplete</code></h2>
+			</header>
+			<p>carga entradas antiguas que el usuario halla introducdo e el input anteriormente</p>
+			<p><em>es un atrributo booleano y esta activado por defecto</em></p>
+			<p>desactivarlo: <code>autocomplete="off"</code></p>
+		</article>
+
+		<article id="attr_required">
+			<header>
+				<h2><code>required</code></h2>
+			</header>
+			<p>el formulario exige relenar el campo e n el input antes de que se envie la pagina</p>
+			<p><em>es un atributo booleano y esta deactivado por defecto</em></p>
+			<p>activarlo: <code>required</code></p>
+			<p>falta de compatibilidad en navegadores: IE9 - navegadores moviles (opera mini, IOSsafari - android)</p>
+			<p>para estos casos hay que cargar javascriprt de validadcion  de campos incmpletos del lado del cliente</p>
+		</article>
+
+		<article id="attr_datalist">
+			<header>
+				<h2><code>datalist</code></h2>
+			</header>
+			<p>permite seleccionar una serie de valores para los <strong>inputs de tipo text</strong></p>
+			<p><strong>NO es un menu SELECT</strong>, no hay que elegir obligatoriamente un valor</p>
+			<p>solo es una <em>ayuda</em> que te permite <em>completar los campos</em> del ,formulario</p>
+			<form action="pruebas_php.php">
+				<p>
+					<datalist id="fruits">
+					  <select name="fruits">
+					    <option value="mora">Blackberry</option>
+					    <option value="grosella negra">Blackcurrant</option>
+					    <option value="arandano">Blueberry</option>
+					  </select>
+					  If other, please specify: <!-- navegadores no compatibles cmon datalist -->
+					</datalist>
+					<label for="frutas_bosque">Your favorite fruit: </label>
+					<input type="text" name="fruit" id="frutas_bosque" list="fruits">
+				</p>
+			</form>
+		</article>
+
+		<article id="attr_form">
+			<header>
+				<h2><code>form</code></h2>
+			</header>
+			<p>permite asociar el input al que se asopcia, un formulario desplazado a otro lugar de la pagina</p>
+			<p>se asocia con el <code>&lt;form id=""&gt;</code></p>
+			<p>de esta manera el input NO debe ser descendiente del  formulario</p>
+		</article>
+
+		<article id="attr_min_max">
+			<header>
+				<h2><code>min, max</code></h2>
+			</header>
+			<p> The max and min attributes works with the following input types:</p>
+			<ul>
+				<li>number</li>
+				<li>range</li>
+				<li>date</li>
+				<li>time</li>
+				<li>datetime</li>
+				<li>month</li>
+				<li>week</li>
+			</ul>
+		</article>
+
+	</section>
+
+</body>
+</html>

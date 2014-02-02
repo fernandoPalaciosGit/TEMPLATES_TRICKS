@@ -1,0 +1,31 @@
+@CHARSET "ISO-8859-1";
+/*diseño grande (>=981 px), mediano (481px-980px), mini (<=480px)*/
+/*este diseño se activara con la instruccion: media="" */
+
+/* clase correspondiente al media query se ejecutara*/
+.display-great{
+	display: inherit !important;
+}
+
+h1, h2{
+	text-align: center;
+}
+
+/*se centra el contenido de la pagina*/
+header, footer, #wrapper{
+	margin-left: auto;
+	margin-right: auto;
+	clear: both;
+	width: 100%;
+}
+
+/*maquetacion a dos columnas*/
+#main-nav{
+	float:left; /*me distribuye los elementos a la izq de manera relativa*/
+	width: 20%; /*ahora distribuyo el espesor del elemento un 20% (de la pantalla) desde la izq de la pantalla*/
+}
+
+#main-section{
+	margin-left: 20%; /*separamos el % = menu <nav>*/
+	width: 80%;
+}

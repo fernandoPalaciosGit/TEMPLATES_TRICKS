@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>etiquetas</title>
+</head>
+<body>
+
+	<div id="ETIQUETAS DE CONTENIDO">
+		<h2></h2>
+		<div></div>
+		<span></span>
+		<header></header>
+		<section></section>
+		<article></article>
+		<aside></aside>
+		<footer></footer>
+	</div>
+
+	<div id="ETIQUETAS">
+		<a href="" rel="" title=""> <!-- relacion del contenido zdel hiperenlace-->
+			rel: alternate, author, bookmark(enlace a nuestros documentos),
+			license, next, nofollow(enlace sin CEO), noreferrer(sin referencia
+			encabezado http), prev, search, tag (etiqeta clave)
+		</a>
+
+		<!-- el title"" se mostrarara encima del cursor del monus -->
+		<abbr title="info del acronimo">ACRONIMO</abbr>
+
+		<!-- pubdate: fecha de publicacion del documento -->
+		<time datetime="2009-10-22" pubdate="pubdate">22 de octubre del 2009</time>
+		<time datetime="2000-02-14">San valentin</time>
+		<time datetime="09:00:00">por la mañana</time>
+
+		<!-- fechas implicitas -->
+		<time datetime="YYYY-MM-DDThh:mm:ssTZD"></time>
+
+
+		<!-- contenedor de imagenes -->
+		<figure>
+			<img alt="text alternativo" src="***.jpg" width="" height="">
+			<figcaption>descripcion de la imagen</figcaption>
+			<img alt="" src="">
+			<figcaption></figcaption>
+		</figure>
+
+		<mark>
+			resalta la interaccion del usuario con la pagina,
+			se debe cmombinar con JS para resaltar la accion del usuario sobre algun elemento,
+			por ejemplo las palabras buscadas en el 'type="search"'
+		</mark>
+
+	</div>
+
+
+
+	<div id="el._BLOQUE">
+		<div></div>
+		<address></address>
+		<blockquote cite=""></blockquote> | <q cite=""></q>
+		<table>
+		  <tr>
+		    <th>Column 1 Heading</th>
+		    <td>Column 2 Heading</td>
+		  </tr>
+		</table>
+		<ul></ul>
+		<ol></ol>
+		<dl><!-- definicion de elementos -->
+		  <dt> First definition</dt>  <dd>  First explanation</dd>
+		  <dt> Second definition</dt> <dd> Second explanation</dd>
+		</dl>
+		<fieldset form="<form id=''>"></fieldset><!-- agrupacion de controles de formulario -->
+		<!-- form="id" permite hacer ref. a un formulario dentro de la pagina-->
+		<form action=""></form>
+
+	</div>
+
+
+	<address><!-- informacion de contacto -->
+		Escrita por <a href="mailto:fernando_pl1@hotmail.com">Mail Fernando</a>.<br/>
+		Direccion web <a href="http://www.webnando.com">Web Fernando</a>.<br/>
+		Direccion local C/Mateo Fiol 68. - <abbr title="españa">ES</abbr>
+	</address>
+
+	<video preload="auto || meta || none"
+			 poster="/folder/*.png || javascript:void(0)+background-image"
+			 autoplay controls loop muted>
+		<!-- tipos MIME / Codecs (video, audio)-->
+		<source src="../media/video/*.mp4" type="video/mp4" codecs="avc1.4D401E, mp4a.40.2"/>
+		<source src="../media/video/*.webm" type="video/webm" codecs="vp8.0, vorbis"/>
+		<source src="../media/video/*.ogg" type="video/ogg" codecs="theora, vorbis"/>
+		Tu navegador NO soporta los videos en html5
+	</video>
+
+	<audio controls autoplay loop muted preload>
+		<!-- tipos MIME -->
+		<source src="../media/audio/*.mp3" type="audio/mpeg"/>
+		<source src="../media/audio/*.ogg" type="audio/ogg"/>
+		<source src="../media/audio/*.wav" type="audio/wav"/>
+		Tu Navegador NO soporta audios en html5
+	</audio>
+
+	<!-- MICRO : se puede usar para cuelquier control de form -->
+	<input type="text" placeholder="Di lo que te apetezca" speech x-webkit-speech />
+
+	<!-- SIN JAVASCRIPT -->
+	<noscript id="no-js">
+		Esta pagina requiere de <span>javascript</span> para navegar por su contenido
+		<ul>
+			<li><span>cambiar navegador</span> con soporte javascript</li>
+			<li><span>activar javascript</span> en su navegador</li>
+			<li>acceder a la version de esta pagina <span><a href="no-js.html">NO-JAVASCRIPT</a></span></li>
+		</ul>
+	</noscript>
+
+	<!-- NUEVA SEMANTICA EN ETIQUETAS HTML:5 --> <!-- ELEMENTOS CONCRETOS -->
+	<!--HTML5:  texto en voz alternativa, un estado de contexto diferente -->
+	<i>generos taxonomicos, tecnicismos, frases idiomaticas, transcripciones, un pensamiento o concepto (una idea)</i>
+	<!-- HTML5: desplazamiento estilísticamente-->
+	<b class="clave">palabras/frases clave del documento, nombre de productos, frase que define el concepto de un articulo, resumen del contexto del articulo</b>
+	<!-- HTML5: una alerta forzada-->
+	<em>texto que alerta, emfatiza de algo</em>
+	<!-- HTML5: texto importante, dirigir la mirada al usuario-->
+	<strong>la parte mas importante del texto</strong>
+
+	<!-- EJEMPLOS DE SEMANTICA -->
+	<p><i>'Ansio este trabajo'</i>, el pensó</p>
+	<p><b class="clave">El evento llega el siguiente Sabado y se registraran cerca de 3000 personas</b></p>
+	<p>Asegurate de registrarte <em>antes</em> del dia del evento, <strong><time datetime="2013-09-16T24:00:00">16 de Septiembre de este año</time></strong></p>
+
+	<!-- NUEVA SEMANTICA EN ETIQUETAS HTML:5 --> <!-- ELEMENTOS CONTENEDORES -->
+	<!-- HTML5: contenedor que NO tiene sentido semantico-->
+	<div>los ojos y la nariz del Homer que dibujo con CSS, encapsulacion de imagenes en un slider para darle interaccion con JS</div>
+	<!-- HTML5: contenedor CON sentido semantico, que agrupa el contenido relacionado con una tematica en especial-->
+	<section>contenido HTML que esta relacionada con un contexto, ¿esta el contenido relacionado?; ejemplos concretos son: &lt;header&gt;, &lt;footer&gt;, &lt;aside&gt; y &lt;main&gt;</section>
+
+	<header>grupo introductorio de elementos, &lt;h1, h2&gt;(titulos), &lt;p&gt;(subtitulos)</header>
+	<footer>contenido extendido de la pagina, que tiene que ver con él como una 'postdata' o el 'autor', o enlaces intradocumentales o extradocumentales con relacion a la semantica de la web, o esponsores - patrocinadores</footer>
+	<aside>contenido alternativo de la pagina, que expande el contenido, que no tiene que ver directamente con él, o enlaces extradocumentales</aside>
+	<nav>contenedor de enlaces, principalmente se estructura con &lt;,ul, ol&gt;</nav>
+	<article></article>
+	<main></main>
+	<figure></figure>
+	<figcaption></figcaption>
+	<time></time>
+</body>
+</html>

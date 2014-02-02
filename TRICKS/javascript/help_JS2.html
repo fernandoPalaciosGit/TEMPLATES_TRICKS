@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+<script type="text/javascript">
+	//OBTENER EL NUMERO DE ELEMENTOS EN UN OBJETO DESDE SU PROTOTYPO
+	Object.prototype.size2 = function() {
+	    var size = 0, key, obj = this;
+	    for (key in obj) {
+	        if (obj.hasOwnProperty(key)) size++;
+	    }
+	    return size;
+	};
+
+	var myArray = {city1: "Palma", city2: "Inca", city3: "Manacor"};
+	myArray.size2();
+
+
+	//ARGUMENTOS DENTRO DE FUNCIONES
+	// podemos pasar mas parametros de  los que ya estabn definidos de manera nativa en la funcion
+	function ejemplo(arg1, arg2)
+	{
+		arg1 = arg1 || "defecto1";
+		arg2 = arg2 || "defecto2";
+		log(arg1);
+		log(arg2);
+		log(arguments);
+		console.log(arguments);
+		log("el primer parametro pasado es: "+arguments[arguments[0]]);
+		log("el ultimo parametro pasado es: "+arguments[arguments.length-1]);
+		log("esta funcion espera: "+ejemplo.length+" argumentos, Nsotros le pasamos: "+arguments.length)
+	}
+</script>
+<script>
+	//call es un metodo de la funcion, que la llama mcon un contexto
+	//ell proimer parametro es this, y el suiguiente es el quue le indiquemos
+	//call(this, "parametros")
+	//apply(this, "array de parametros")
+	if(log("booones") == log.call(this, "boones")){
+		log("correcta equivalencia");
+	}
+	if(Math.pow(2, 3) == Math.pow.call(this, 2, 3)){
+		log("correcta equivalencia");
+	}
+	if(Math.pow(2, 3) == Math.pow.apply(this, [2, 3])){
+		log("correcta equivalencia");
+	}
+
+
+	// que pasa si yo tengo una referencia a una funciion  y la quiero llamar con otro contexto
+	function ejemplo2(arg1, arg2)
+	{
+		var primerArg = arguments[0];
+		var segunArg = arguments[1];
+
+		if(typeof arg1 == "function" && typeof arg2 == "object"){
+			//si se cumple, volvemos a lllamar a la funcion pero de manera invertida
+			arguments.callee.apply(this, [uno, cero])
+		}
+	}
+	//los arguments solo se pueden llamar dentro de las funciones: funcion.arguments
+</script>
+
+<script>
+	//COMO PODEMOS EXTENDER LAS FUNCIONES
+	//OMO ACCEDER A LAS FUNCIONES NATIVAS
+	//COMO ACCCEDER A LOS ARGUMENTOS DE UNA FUNCION
+
+	/*metio que va a extender el funcmionamiento original de la funcion*/
+	Function.prototype.conMemoria = function()
+	{
+		var func = this;
+		var memoria = [];
+
+		/*CLOUSURE*/
+		return function()
+		{
+			/*guardamos en memoria los argumentos de la funcion interior, del CLOUSURE*/
+			memoria.push(arguments);
+			console.log(memoria);
+			/*devolvemmos la funcion exterior con los argumentos del clousure*/
+			return func.apply(this, [arguments]);
+		}
+	}
+
+	function log(msg)
+	{
+		console.log(msg);
+	}
+	var logConMemoria = log.conMemoria();//a paratir de ahora la variable logConMemoria, almacena todos los argumentos que le pasamos
+	/*var logConMemoria = function(msg)
+	{
+		console.log(msg)
+	}.conMemoria();*/
+	/*tambien se lo podemos aplicar a funciones nativas*/
+	var alertExt = window.alert.conMemoria();
+</script>
+
+<script>
+	//funcion en vez de acordarno de los parametros: return this.apply(this, [argument])
+	//nos qyueremos acordar de los resultados de wlo que ejecuta la funcion
+	Function.prototype.cache = function()
+	{
+		var func = this;
+		var cache = {};
+		return function(args)/*tendremos acceso a la s variables globales*/
+		{
+			if(args in cache){
+				console.log("el argumento ya se almaceno en la aplicacion: "+cache[args]);
+				return cache[args];
+			}else{
+				return cache[args] = func.call(this, args);
+			}
+		}
+	}
+	//extendemos una funcion nativa
+	var sinCache = Math.sin.cache();
+</script>
+
+<script>
+	//FUNCIONES PARCIALES
+	var suma = function(a)
+	{
+		return function(b)//esta funcion sera la imagen de lo que iguialaras a esta funcion
+		{
+			return a+b;
+		}
+	}
+	var sum1 = suma(1);//se le sumara 1
+	sum1(78);//sera 79
+	var sum10 = suma(10);
+	sum10(35);//sera 45
+
+	//CONVERTIR LOS ARGUMENTOS EN UN ARRAY
+	var toArray = function(x)
+	{
+		return Array.prototype.slice.call(x);
+	}
+	Function.prototype.partial = function()
+	{
+		var func = this;
+		//nos acordamos de los argumentos en forma de Array
+		var args = toArray(arguments);
+		return function()
+		{//devolver la funcion global con los argumentos pasados anteriormente MAS los nuevos
+			return func.apply(this, args.concat(toArray(arguments)))
+		}
+	}
+	function crearNombre(nom, ape1, ape2)
+	{
+		return nom+" "+ape1+" "+ape2;
+	}
+	//estoy llamando a partial con dos argumentos
+	fp = crearNombre.partial("Fernando", "Palacios");
+	fp("landi");
+	//autocompletamos los dos primeros parametros,
+	//los siguientes seran los que completen los definidos por la funccion global, que seran tre por se los de crearNombre()
+</script>
+
+<script>
+	var toArray = function(x)
+	{
+		return Array.prototype.slice.call(x);
+	}
+	Function.prototype.partial = function()
+	{
+		var func = this;
+		var args = toArray(arguments);
+		return function()
+		{
+			return func.apply(this, args.concat(toArray(arguments)));
+		}
+	}
+	/*
+	var changeLinkSize = function(selector, size)
+	{
+		document.getElementById(selector).style.fontSize = size;
+	}.partial("links");
+	changeLinkSize("13px");
+
+	var changeSize12 = function(size, selector)
+	{
+		document.getElementById(selector).style.fontSize = size;
+	}.partial("12px");
+	changeSize12("body");
+	*/
+	function filter(filtro, arreglo)
+	{
+		return arreglo.filter(filtro);//devuelve el array con el filtr, este es una operacion booleana
+	}
+	var soloImpares = filter.partial(function(elem){//con Function.partial(arg) le añadimos el valos de los primeros argumentos de los argumentops  en la funcion global, POR LO TANTO E FILTRO
+			return elem%2;/*LE AUTO COMPLETAMOS CON LE PRIMER PARAMETRO*/
+	});/*solo me devuelve los valoores impares del array*/
+	soloImpares([2, 4, 5, 65,4 6,45 634,5 ,1]);
+
+	var alpha = filter.partial(function(elem){
+		return /[a-z]/.exec(elem);
+	});/*solo me devuelve los valores alfabeticos[a-z] del array*/
+	alpha([]);
+</script>
+</body>
+</html>

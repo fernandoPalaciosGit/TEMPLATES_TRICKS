@@ -1,0 +1,16 @@
+@CHARSET "ISO-8859-1";
+
+/*ocultar los elementos que se encuentren en el selector: no se ejecutaran*/
+/*aqui lo ocultas, y despues en cada uno de los ***.css por pantalla, los activas, y estos a su vez solo se activan si se cumple el media query, que (a su vez) depende de la resolucion de pantalla */
+
+.display-great ,.display-medium, .display-mini{
+	display: none;
+}
+
+.menu{
+ 	padding-left: 0; /*el texto del elemento se pegara a la izq. de su recuadro */
+}
+.menu li{
+	display: inline; /*los elementos de la lista <ul> se ejecutaran en linea*/
+	list-style-type: none; /*elimino el estilo por defecto de <ul>*/
+}

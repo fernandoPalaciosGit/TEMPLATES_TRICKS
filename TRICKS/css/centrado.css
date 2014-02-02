@@ -1,0 +1,110 @@
+/*centrado httal CON MARGIN AUTO
+------------------------------*/
+.padre
+{
+	width: 90%;/*ancho relativo a su padre*/
+	margin: 0;
+	padding: 0;
+}
+.hijo
+{
+	width: 50%;/*ancho relativo a .padre*/
+	margin: 0 auto;
+	padding: 0;
+}
+
+/*CENTRADO CON POSICIONAMIENTO
+------------------------------*/
+/*centrado hztal y vert con position: absolute*/
+.padre
+{
+	position: relative;
+	width: 400px;
+	height: 300px;
+	padding: 0;
+	margin: 0;
+}
+.hijo
+{
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	left: 100px;
+	top: 50px;
+}
+
+
+/*CENTRADO INDEPENDIENTE
+------------------------------*/
+/*tiene que esta posuicionado "absolute", y
+todos sus valores de desplazamiento a cero*/
+.padre
+{
+	position: relative;
+	/*el width y el height aui no influyen el centrado del .hijo*/
+	margin: 0;
+	padding: 0;
+}
+.hijo
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	/*width / height independientes*/
+}
+
+
+/*DOBLE CENTRADO CON POSICIONAMIENTO Y MARGIN
+------------------------------*/
+/*no necesitamos las medidas del padre*/
+.padre
+{
+	position: relative;
+	/*el width y el height aqui no influyen el centrado del .hijo*/
+	margin: 0;
+	padding: 0;
+}
+.hijo
+{
+	position: absolute;
+	width: 400px;
+	height: 200px;
+	margin: -100px 0 0 -200px;
+	top: 50%;
+	left: 50%;
+}
+
+
+/*CENTRADO CALC(x - y)
+------------------------------*/
+.padre
+{
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+.hijo
+{
+	position: absolute;
+	width: 14rem;
+	height: 12rem;
+	top: calc(50% - 6rem);
+	left: calc(50% - 7rem);
+}
+
+
+/*ALINEACION DE TEXTO
+------------------------------*/
+/*el font size no influye en el centrado*/
+.padre
+{
+	height: 200px;
+}
+.hijo
+{
+	line-height: 200px;
+	text-align: center;
+}

@@ -1,0 +1,88 @@
+@CHARSET "ISO-8859-1";
+
+body{
+	margin: 0 auto;
+	padding: 20px;
+}
+p{
+	text-align: justify;
+	margin: 10px auto;
+}
+
+h2{
+	text-align: center;
+}
+header{
+	margin-left: 10%;
+	background-color: gray;
+	color:white;
+	height: 100px;
+	position:fixed;
+	top:0;
+	width: 75%;
+}
+header div#logo{
+	float: left;
+	
+}
+
+header div#navegacion{
+	margin-left: 45%;
+}
+nav ul li, a{
+	color:white;
+	list-style-type: none;
+	text-decoration: none;
+}
+header div#navegacion a{
+	border-bottom: 2px dotted;
+}
+header div#navegacion a:HOVER {
+	border-bottom: 2px solid;
+}
+hgroup>h1{
+	padding-left: 50%;
+	font-style: italic;
+	font-variant: small-caps;
+	font-family: cursive;
+}
+
+section#wrapper{
+	margin-top: 100px;
+}
+
+section#articulos{
+	background-color: #DCDCDC;
+	float:left;
+	width: 60%;
+}
+
+section#articulos p{
+	padding:10px;
+}
+div.linea{
+  height: 1px;
+  width: 90%;
+  margin: 0 auto;
+  border: 0;
+  border-top: 1px dashed black; 
+}
+
+aside#publicidad{
+	box-shadow: 5px 5px 10px magenta, 5px 5px 15px blue inset ;
+	padding-top: 50px;
+}
+aside#publicidad>img{
+	padding: 20px;
+}
+footer{
+	margin-top: 90%;
+	
+}
+footer a{
+	color: black;
+}
+footer>section>div{
+	display: inline;
+	padding: 10px;
+}

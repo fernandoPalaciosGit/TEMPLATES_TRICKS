@@ -1,0 +1,23 @@
+@CHARSET "ISO-8859-1";
+
+/* color para el texto */
+body {
+	color:black;
+}
+a, a:VISITED, a:LINK, a:HOVER, a:ACTIVE{
+	color:blue;
+}
+
+/* colores de fondo */
+header{
+	background-color: #FF9966;	
+}
+#wrapper nav{
+	background-color: #99FF66;
+}
+#wrapper section{
+	background-color: #FFFF99;
+}
+footer{
+	background-color: #FF9900;
+}

@@ -1,0 +1,12 @@
+@CHARSET "ISO-8859-1";
+/* diseño basado en una sola columna (hasta 480px)*/
+/*este diseño se activara con la instruccion: media="" */
+
+.display-mini{
+	display: inherit !important;
+}
+
+select.display-mini {
+	font-size: 1.5em; /*para los moviles aumento el menu desplegable*/
+	width: 100%; /*para moviles el menu desplegable ocupara toda la pantalla*/
+}

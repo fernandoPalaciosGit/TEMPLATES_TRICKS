@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" lang="es">
+<!-- ETIQUETA XA DISEÑO ADAPTABLE -->
+<meta name="viewport" content="width=device-width; initial-scale=1.0"/>
+<title>Diseño adaptativo</title>
+<link href="base.css" rel="stylesheet" type="text/css">
+<link href="colores.css" rel="stylesheet" type="text/css">
+
+<!--  el subtitulo de la pagibna aparecera uno diferente cada vez que carguemos la misnma pagina en != resolucioneas de pantalla-->
+<!-- algunos el. (como el meno ppal.) se han transformado en menus desplegables para ganar algo de espacio, dispositivo movil (<=480px) -->
+<!-- MEDIA QUERYS: se activaran ***.css en funcion de media"" : DEL TAMAÑO DE LA PANTALLA-->
+<link href="diseño grande.css" rel="stylesheet" type="text/css" media="screen and (min-width: 981px)">
+<link href="diseño mediano.css" rel="stylesheet" type="text/css" media="screen and (min-width:481px) and (max-width: 980px)">
+<link href="diseño mini.css" rel="stylesheet" type="text/css" media="screen and (max-width:480px)">
+
+</head>
+
+<body>
+<!-- el encabezado <header> y el pie de pagina <footer> Van FUera del <div id"wrapper"> -->
+<!-- Diseño Adaptativo: se trata de aislar los elementos susceptibles de que solo se vayan a ver en esa resolucion  de pantalla a traves de class="" -->
+	<header>
+		<h1>Aqui va el titulo de mi sitio web</h1>
+		<h2 class="display-great">diseño Grande</h2>
+		<h2 class="display-medium">diseño Mediano</h2>
+		<h2 class="display-mini">diseño mini</h2>
+	</header>
+	
+	<div id="wrapper">
+		<nav id="main-nav">
+			<h2>Menu de navegacion</h2>
+			<ol class="menu display-great display-medium">
+			  <li><a href="#">Enlace pagina ppal</a></li>
+			  <li><a href="#">Enlace pagina de contenidos</a></li>
+			  <li><a href="#">Enlace pie dce pagina</a></li>
+			</ol>
+			
+			<select name="num_desplegable" class="display-mini">
+				<option>Uno</option>
+				<option>Dos</option>
+				<option>Tres</option>
+			</select>
+		</nav>	
+		
+		<!-- <section: esta compuesto de diferentes articulos> -->
+		<section id="main-section">
+			<h2>El contenido de mi "seccion"</h2>
+		
+			<article>
+				<h3>Articulo 1</h3>
+				<p class="display-great display-medium ">Fernando Palacios un dia escribio una web</p>
+			</article>
+			
+			<article>
+				<h3>Articulo 2</h3>
+				<p class="display-great display-medium ">Fernando Palacios un dia acabo la web</p>
+			</article>
+			
+			<article>
+				<h3>Articulo 3</h3>
+				<p class="display-great display-medium ">Fernando Palacios ya no sabia que hacer conb la web</p>
+			</article>
+				
+		</section>
+	</div>
+		
+		
+	<footer>
+		<p>Esto es el tipico Pie de Pagina</p>
+		<select class="display-mini">
+			<option>Uno</option>
+			<option>Dos</option>
+			<option>Tres</option>
+		</select>
+	</footer>
+
+</body>
+
+</html>

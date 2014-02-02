@@ -1,0 +1,32 @@
+@CHARSET "ISO-8859-1";
+body{
+margin: 0px auto;
+padding: 0px auto;
+}
+#header{
+	height: 250px;
+	background-color: #ddd;
+}
+#navegacion{
+	background-color: #000;
+	color:#FFF;
+}
+#contenido article{
+	height: 700px;
+}
+#columnas article{
+	height: 100px;
+}
+
+article:nth-child(even){
+	background-color: #7399DE;
+}
+article:nth-child(odd){
+	background-color: #ddd;
+}
+
+footer{
+	height: 50px;
+	background-color: #000;
+	color:#FFF;
+}

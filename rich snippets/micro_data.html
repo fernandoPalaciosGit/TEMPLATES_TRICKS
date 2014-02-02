@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MICRODATOS</title>
+</head>
+<body>
+
+
+
+<!-- FICHA PERSONAL -->
+
+	 	<article id="fichaPersonal" itemscope itemtype="http://data-vocabulary.org/Person">
+	 		<img alt="foto carnet fernando" rel="author" src="#.jpg" width="150" height="200" itemprop="photo">
+	 		<hgroup>
+	 			<h1>curriculum vitae</h1>
+	 			<h2 itemprop="name">fernando palacios landi</h2>
+	 		</hgroup>
+	 		<dl>
+			  <dt> nombre</dt>  <dd>  fernando</dd>
+			  <dt> apellido</dt> <dd> palacios landi</dd>
+			  <dt> oficio</dt> <dd> <span itemprop="title" >programador web</span> <span itemprop="role">desarrollador de aplicaciones</span> asociado a <span itemprop="affiliation">google, Inc.</span></dd>
+			  <dt> direccion de correo</dt> <dd itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address"> 
+			   	<span itemprop="street-address">mateo fiol 68</span> <spam itemprop="locality">la vileta</spam>, <span itemprop="postal-address">07013</span>, <spam itemprop="region">palma de mallorca</spam>, <abbr title="españa" itemprop="country-name">ES</abbr></dd>
+			</dl>
+			
+			<h2>huellas digitales</h2>
+			  <ul>
+				  <li> <a href="http://www.diveintonando.org" rel="url me" itemprop="url">weblog</a></li>
+				  <li> <a href="http://www.google.es/profiles/palacios" rel="url author" itemprop="url">perfil de google</a></li>
+				  <li> <a href="http://www.reedit.com/user/FernandoPal" rel="url me" itemprop="url">perfil de reedit</a></li>
+				  <li> <a href="http://www.twitter/diveintonando" rel="url me" itemprop="url">twitter</a></li>
+				</ul>
+	 	</article>
+	 	
+	 	
+	 	
+	 	
+  <!-- ORGANIZACION-->
+  
+  	<article id="Organizacion">
+  		<div id="googleOrg" itemscope itemtype="http://schema.org/Organization">
+  			<p>
+  				<img alt="icono google" src="#.jpg" width="150" height="200"/>
+	  			<span itemprop="location" itemscope 
+				    itemtype="http://schema.org/GeoCoordinates">
+				    <meta itemprop="latitude" content="37.4149" />
+				    <meta itemprop="longitude" content="-122.078" />
+				</span>
+  			</p>
+  			<p>
+	  			<span itemprop="name">Google Inc</span> 
+	  			<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+		  			<span itemprop="street-address">1600 Amphitheatre Parkway</span>
+		  			<span itemprop="locality">Mountain View</span>
+		  			, <span itemprop="region">CA</span> 
+		  			<span itemprop="postal-code">94043</span> 
+		  			<span itemprop="country-name">USA</span>
+	  			</span>
+				<span itemprop="tel">650-253-0000</span>
+				<a rel="url" itemprop="url" href="http://www.google.com">Google.com</a>
+  			</p>  		
+  		</div>
+		
+		<div id="yahooOrg">
+		</div>  	
+  	
+  	</article>
+  
+  
+  
+  
+  <!-- EVENTOS -->
+  
+	 <article id="BDexam" itemscope itemtype="http://data-vocabulary.org/Event">
+	  	<h1 itemprop="summary">el examen final de base de datos</h1>
+	  	<img alt="alumnos aterrorizados" width="300" height="200" src="#.jpg" itemprop="photo"/>
+	  	<p>
+	  		Sera un examende <time itemprop="duration">3 horas</time> de duracion y estara supervisdado por su 
+	  		<span itemprop="performer" itemscope itemtype="http://schema.org/Person">
+	  		<span itemprop="honorifiPrefix">excelentisimo</span> <span itemprop="name">Miquel Mateu</span> <span itemprop="jobTitle">DBA</span></span>. El temario para el examen final de base de datos es:
+	  	</p> 
+	 	<ol itemprop="description">
+		  <li> sentencias DML sql de busqueda de datos en tablas y alteracion de las mmismas: <code>insert, update, delete</code></li>
+		  <li> sentencias DDL sql de alteracion de objetos: <code>create, alter, drop</code></li>
+		  <li> sentencias DCL sql de manipulacion del SGBD y permisos a usyuarios: <code>grant, constraints</code></li>
+		  <li> programacion avanzada en pl/sql</li>
+		  <li> cursores implicitos y explicitos</li>
+		  <li> bloques anonimos, procedimientos, funciones y triggers</li>
+		</ol>
+		<p>
+			<time datetime="2013-07-22">22 de julio del 2013</time> en el <span itemprop="location" itemscope itemtype="http://schema.org/Place">
+			salon de actos de la rectoria en el instituto borja moll
+				 <span itemprop="geo" itemscope 
+				    itemtype="http://schema.org/GeoCoordinates">
+				    <meta itemprop="latitude" content="37.4149" />
+				    <meta itemprop="longitude" content="-122.078" />
+				</span>
+			</span>, 
+			<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+			<span itemprop="streetAddress">calle caracas 22</span>, 
+			<span itemprop="postalCode">01255</span>, 
+			<span itemprop="addressLocality">palma de mallorca</span> , 
+			<abbr itemprop="addressCountry">ES</abbr>.</span>
+			
+			<a href="http://www.FBM.es" itemprop="url">contacto</a>		
+		</p>
+		<dl>
+		  <dt> hora de inicio</dt>  <dd>  <time itemprop="startDate" datetime="2013-07-22T08:30+01:00">8:30 de la mañana</time></dd>
+		  <dt> hora de finalizacion</dt> <dd> <time itemprop="endDate" datetime="2013-07-22T12:30+01:00">12 del madiodia</time></dd>
+		</dl> 
+	</article>
+
+
+	
+</body>
+</html>

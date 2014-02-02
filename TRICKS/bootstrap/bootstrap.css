@@ -1,0 +1,44 @@
+.container 	/*CONTENEDOR*/
+.row			/*FILAS al contenedor*/
+.col-(xs||sm||md||lg)-	/*COLUMANAS a las filas, hasta 12 por defecto*/
+.well 			 			/*caja de encabezado*/
+.visible-(xs||sm||md||lg)/*visibilidad responsive*/
+.hidden-(xs||sm||md||lg)/*visibilidad responsive*/
+
+/*TABLAS*/
+.table .table-bordered .table-striped .table-hover .table-condensed
+
+/*FORMULARIOS*/
+/* <form role="form"> */
+/* <legend> */
+p.form-group label.control-label input.form-control
+.input-group .input-group-addon
+
+/*BOTONES*/
+.btn || .btn-link
+.btn-block
+.btn-group /*varios botones agruupados en un solo div*/
+.btn-toolbar /*varios grupos de botones*/
+.btn-default .btn-primary .btn-success .btn-warning .btn-info .btn-danger .btn-inverse
+.btn-lg .btn-sm .btn-xs
+
+/*IMAGENES*/
+.img-responsive
+.img-rounded .img-circle .img-thumbnail
+
+/*ICONOS*/
+.glyphicon.glyphicon-star
+
+/*ICONOS FONT-AWESOME*/
+.fa .fa-camara
+.fa-ul && .fa-li /*todos las etiquetas que quieres formar las marcas de lista*/
+.fa-lg .fa-2x .fa-3x .fa-4x .fa-5x
+.pull-right .pull-left .fa-border
+.fa-spin
+.fa-stack && .fa-stack-x .fa-stack-x2
+
+/*MENUS DE NAVEGACION*/
+.nav.nav-pills	/*menus comobotones*/
+.nav.nav-tabs	/*menus como folders*/
+.nav.nav-list	/*menus como lista vertical*/
+
