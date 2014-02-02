@@ -6,10 +6,16 @@
 
 - crear un repo en github con el nombre: NOMBRE_REPO
 
+<<<<<<< HEAD
 - 	git remote add origin http://github.com/fernandoPalaciosGit/NOMBRE_REPO.git  ||
 	git remote add origin git@github.com:fernandoPalaciosGit/NOMBRE_REPO.git
 
 - eliminar sinc: 'gti remote rm origin'
+=======
+- git remote add origin http://github.com/fernandoPalaciosGit/NOMBRE_REPO.git
+
+- eliminar sinc: 'gti remote -rm origin'
+>>>>>>> 7b98fa95d08b9832911cf788c11399633fb54acf
 
 - 'git pull origin master'
 
