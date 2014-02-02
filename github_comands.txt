@@ -1,0 +1,15 @@
+- crear una clave ssh en github, copiarla en la carpeta oculta 'C://.ssh/claveSSSH.pub'
+
+- creamos el repo en local:
+	> crear carpeta NOMBRE_REPO, añadir documentos, crear repo ('git init')
+	> stage ('git add --all') + commit ('git commit -m "msg"')
+
+- crear un repo en github con el nombre: NOMBRE_REPO
+
+- git remote add origin http://github.com/fernandoPalaciosGit/NOMBRE_REPO.git
+
+- eliminar sinc: 'gti remote -rm origin'
+
+- 'git pull origin master'
+
+-'git push origin master'
